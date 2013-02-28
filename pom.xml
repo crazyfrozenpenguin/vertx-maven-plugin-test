@@ -1,37 +1,37 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-	<modelVersion>4.0.0</modelVersion>
-	<groupId>org.vertx.maven.plugin</groupId>
-	<artifactId>vertx-maven-plugin-test</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
-	<name>Vert.x Maven Plugin Test</name>
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>org.vertx.maven.plugin</groupId>
+    <artifactId>vertx-maven-plugin-test</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <name>Vert.x Maven Plugin Test</name>
 
-	<properties>
-		<scala.version>2.10.0</scala.version>
-		<vertx.version>2.0.0-SNAPSHOT</vertx.version>
-		<mod.scala.version>0.1.0-SNAPSHOT</mod.scala.version>
-		<vertx.maven.version>2.0.0.0-SNAPSHOT</vertx.maven.version>
-	</properties>
+    <properties>
+        <scala.version>2.10.0</scala.version>
+        <vertx.version>2.0.0-SNAPSHOT</vertx.version>
+        <mod.scala.version>0.1.0-SNAPSHOT</mod.scala.version>
+        <vertx.maven.version>2.0.0.0-SNAPSHOT</vertx.maven.version>
+    </properties>
 
-	<dependencies>
-		<!-- vertx dependencies -->
-		<dependency>
-			<groupId>org.vertx</groupId>
-			<artifactId>vertx-core</artifactId>
-			<version>${vertx.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>org.vertx</groupId>
-			<artifactId>vertx-platform</artifactId>
-			<version>${vertx.version}</version>
-		</dependency>
-	</dependencies>
+    <dependencies>
+        <!-- vertx dependencies -->
+        <dependency>
+            <groupId>org.vertx</groupId>
+            <artifactId>vertx-core</artifactId>
+            <version>${vertx.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.vertx</groupId>
+            <artifactId>vertx-platform</artifactId>
+            <version>${vertx.version}</version>
+        </dependency>
+    </dependencies>
 
-	<build>
-		<sourceDirectory>src/main/java</sourceDirectory>
-		<testSourceDirectory>src/test/java</testSourceDirectory>
-		<plugins>
-			<plugin>
+    <build>
+        <sourceDirectory>src/main/java</sourceDirectory>
+        <testSourceDirectory>src/test/java</testSourceDirectory>
+        <plugins>
+            <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-assembly-plugin</artifactId>
  
@@ -52,32 +52,32 @@
                     </execution>
                 </executions>
             </plugin>
-			<plugin>
-				<groupId>org.anacoders.plugins</groupId>
-				<artifactId>vertx-maven-plugin</artifactId>
-				<version>${vertx.maven.version}</version>
-				<configuration>
-					<moduleName>${project.artifactId}-${project.version}-mod</moduleName>
-				</configuration>
-				<executions>
-					<execution>
-						<id>start-vertx</id>
-						<phase>pre-integration-test</phase>
-						<goals>
-							<goal>start</goal>
-						</goals>
-					</execution>
-					<execution>
-						<id>stop-vertx</id>
-						<phase>post-integration-test</phase>
-						<goals>
-							<goal>stop</goal>
-						</goals>
-					</execution>
-				</executions>
-			</plugin>
-		</plugins>
+            <plugin>
+                <groupId>org.anacoders.plugins</groupId>
+                <artifactId>vertx-maven-plugin</artifactId>
+                <version>${vertx.maven.version}</version>
+                <configuration>
+                    <moduleName>${project.artifactId}-${project.version}-mod</moduleName>
+                </configuration>
+                <executions>
+                    <execution>
+                        <id>start-vertx</id>
+                        <phase>pre-integration-test</phase>
+                        <goals>
+                            <goal>start</goal>
+                        </goals>
+                    </execution>
+                    <execution>
+                        <id>stop-vertx</id>
+                        <phase>post-integration-test</phase>
+                        <goals>
+                            <goal>stop</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
 
-	</build>
+    </build>
 
 </project>
