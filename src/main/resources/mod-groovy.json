@@ -1,0 +1,3 @@
+{
+	"main": "org/vertx/maven/plugin/test/ServerExample.groovy"
+}
