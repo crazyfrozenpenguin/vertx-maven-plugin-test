@@ -5,7 +5,6 @@
               http://maven.apache.org/plugins/maven-assembly-plugin/assembly/1.1.2 http://maven.apache.org/xsd/assembly-1.1.2.xsd
           ">
  
-    <id>mod</id>
     <formats>
         <format>dir</format>
     </formats>
