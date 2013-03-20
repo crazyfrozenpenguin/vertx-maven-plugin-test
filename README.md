@@ -1,4 +1,5 @@
-vertx-maven-plugin-test
-=======================
+# Vert.x Maven Template
 
-This is a Maven sample project for Vert.x 2.0 Maven plugin: https://github.com/crazyfrozenpenguin/vertx-maven-plugin
+Template project for creating a Vert.x module with a Maven build.
+
+Clone this and adapt it to easily develop Vert.x modules using Maven as your build tool.

@@ -1,3 +1,4 @@
 {
-	"main": "org/vertx/maven/plugin/test/ServerExample.js"
+  "main":"app.js",
+  "deploys":"io.vertx~lang-jython~1.0.0-SNAPSHOT"
 }
