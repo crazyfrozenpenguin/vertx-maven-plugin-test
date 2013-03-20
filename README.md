@@ -1,5 +1,7 @@
-# Vert.x Maven Template
+# Vert.x Maven Plugin Test
 
-Template project for creating a Vert.x module with a Maven build.
+Simple Vert.x project example.
 
-Clone this and adapt it to easily develop Vert.x modules using Maven as your build tool.
+### References
+Vert.x Maven Plugin: https://github.com/crazyfrozenpenguin/vertx-maven-plugin
+Vert.x Maven Archetype: https://github.com/sramki/maven-archetype-vertx
