@@ -28,6 +28,7 @@ import org.junit.Test;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.vertx.java.core.AsyncResult;
 import org.vertx.java.core.Handler;
 import org.vertx.testtools.TestVerticle;
 
@@ -62,9 +63,9 @@ public class InContainerTest extends TestVerticle {
 	public void shouldSayHello() {
 		setUp();
 
-		container.deployModule(System.getProperty("vertx.modulename"), new Handler<String>() {
+		container.deployModule(System.getProperty("vertx.modulename"), new Handler<AsyncResult<String>>() {
 			@Override
-			public void handle(final String deploymentID) {
+			public void handle(final AsyncResult<String> deploymentID) {
 				assertNotNull("deploymentID should not be null", deploymentID);
 				driver.get("http://localhost:8080");
 
